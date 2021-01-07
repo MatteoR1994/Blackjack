@@ -4,6 +4,13 @@ class ManoGioco(val manoBanco: Boolean) {
 
     fun aggiungiCarta(carta: Carta) {
         carte.add(carta)
+
+    }
+
+    fun svuotaMano() {
+        println("\n\nDiensione mano metodo PRIMA: ${carte.size}\n")
+        carte.clear()
+        println("\n\nDiensione mano metodo DOPO: ${carte.size}\n")
     }
 
     fun calcolaValoreMano(): Int {
