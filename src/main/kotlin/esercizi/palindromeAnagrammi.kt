@@ -33,15 +33,15 @@ fun trovaPalindrome(array: Array<String>): MutableList<String>? {
 
 fun trovaAnagrammi(array: Array<String>, target: String): MutableList<String> {
     val risultato: MutableList<String> = mutableListOf()
+    // Stringa target: 1) Converto in array di caratteri; 2) Lo ordino; 3) Lo converto in stringa
+    var charTarget = target.toCharArray()
+    charTarget.sort()
+    val secondaStringaConfronto = charTarget.contentToString()
     for(i in 0 until array.size) {
         // Stringa in array: 1) Converto in array di caratteri; 2) Lo ordino; 3) Lo converto in stringa
         var charAr = array[i].toCharArray()
         charAr.sort()
         val primaStringaConfronto = charAr.contentToString()
-        // Stringa target: 1) Converto in array di caratteri; 2) Lo ordino; 3) Lo converto in stringa
-        var charTarget = target.toCharArray()
-        charTarget.sort()
-        val secondaStringaConfronto = charTarget.contentToString()
         if (primaStringaConfronto==secondaStringaConfronto) {
             risultato.add(array[i])
         }
